@@ -13,7 +13,7 @@ def test():
 def predict():
     vehicle= request.get_json()
     print(vehicle)
-    SVR_model= pickle.load('./Web-App/model_files/MPG_SVR.pkl')
+    SVR_model= pickle.load('./model_files/MPG_SVR.pkl')
     predictions=predict_mpg(vehicle, SVR_model)
     result = {
         'mpg_prediction': list(predictions)
