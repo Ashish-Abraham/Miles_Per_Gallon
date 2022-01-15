@@ -22,7 +22,6 @@ def num_pipeline_transformer(data):
 
 def pipeline_transformer(data):
     cat_attrs=["Origin"]
-    data=pd.DataFrame(data)
     num_attrs, num_pipeline = num_pipeline_transformer(data)
     full_pipeline= ColumnTransformer([("num", num_pipeline, list(num_attrs)),("cat", OneHotEncoder(), cat_attrs),])
     prepared_data=full_pipeline.fit_transform(data)
