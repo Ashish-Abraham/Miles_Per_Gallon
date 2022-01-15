@@ -1,6 +1,6 @@
 
 from flask import Flask,request,jsonify
-from model_files.ML import predict_mpg
+from model_files.model import predict_mpg
 import pickle
 
 app= Flask('app')
