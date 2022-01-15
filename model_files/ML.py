@@ -22,13 +22,14 @@ def num_pipeline_transformer(data):
 
 def pipeline_transformer(data):
     cat_attrs=["Origin"]
+    data=pd.DataFrame(data)
     num_attrs, num_pipeline = num_pipeline_transformer(data)
     full_pipeline= ColumnTransformer([("num", num_pipeline, list(num_attrs)),("cat", OneHotEncoder(), cat_attrs),])
     prepared_data=full_pipeline.fit_transform(data)
     return prepared_data    
 
 def predict_mpg(config,model):
-    if type(config) == dict:
+    if type(config) is dict:
         df = pd.DataFrame(config)
     else:
         df = config
