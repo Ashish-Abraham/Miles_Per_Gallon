@@ -7,7 +7,7 @@ app= Flask('app')
 
 @app.route('/test', methods=['GET'])
 def test():
-    return 'First one!!'
+    return 'Running!!'
 
 @app.route('/predict', methods=['POST'])
 def predict():
