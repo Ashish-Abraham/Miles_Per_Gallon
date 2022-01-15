@@ -6,15 +6,12 @@ Restoring a classic car(70s & 80s) can be as complicated as solving a 1000 piece
 * Framework : Scikit-Learn( Version: 1.0 )
 * Algorithm : Support Vector Regressor
 * Validation Accuracy : 85.3%
-* Dataset: https://archive.ics.uci.edu/ml/datasets/auto+mpg
+* Dataset: https://archive.ics.uci.edu/ml/datasets/auto+mpg <br><br>
+![Image](https://github.com/Ashish-Abraham/Miles_Per_Gallon/blob/main/model_files/SVR.png)
 
-### How to train
-Upload the python notebook in the folder **'model'** to Google Colab and run each cell for training the model.
 ## How to use:
-* Clone repository to local machine and run app.py in folder web app or open https://heart-status.herokuapp.com/ to take a quick look.
-* You can make changes in app.py and web-app folder and host it to use as an api in any application.
-
+* In the repo, model is available as ready to host api, made using flask.
+* Host in required web-service
 
 ## *Thanks for reading the Documentation. Open to suggestions if any.*
-# Miles_Per_Gallon
-Predict fuel consumption of classic vehicles from the 70s and 80s, enabling the user to consider necessary factors during their restoration.
+
