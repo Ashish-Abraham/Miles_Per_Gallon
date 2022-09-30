@@ -17,15 +17,20 @@ from sklearn.metrics import mean_squared_error
 def num_pipeline_transformer(data):
     numerics = ['float64', 'int64']
     num_attrs= data.select_dtypes(include=numerics)
-    num_pipeline=Pipeline([('scaler', StandardScaler()),])
+    num_pipeline=Pipeline([
+        ('scaler', StandardScaler()),
+    ])
     return num_attrs, num_pipeline
 
 def pipeline_transformer(data):
     cat_attrs=["Origin"]
     num_attrs, num_pipeline = num_pipeline_transformer(data)
-    full_pipeline= ColumnTransformer([("num", num_pipeline, list(num_attrs)),("cat", OneHotEncoder(), cat_attrs),])
+    full_pipeline= ColumnTransformer([
+        ("num", num_pipeline, list(num_attrs)),
+        ("cat", OneHotEncoder(), cat_attrs),
+    ])
     prepared_data=full_pipeline.fit_transform(data)
-    return prepared_data    
+    return prepared_data   
 
 def predict_mpg(config,model):
     if type(config) is dict:
@@ -33,7 +38,7 @@ def predict_mpg(config,model):
     else:
         df = config
 
-    preproc_data= pipeline_transformer(config)    
+    preproc_data= pipeline_transformer(df)    
     print(len(preproc_data[0]))
     y_pred = model.predict(preproc_data)
     return y_pred
